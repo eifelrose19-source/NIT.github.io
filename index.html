@@ -1,73 +1,378 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Nations Integrated Therapy | Hope, Healing, & Meaning</title>
-  <style>
-        /* This is the "CSS" */
+    <title>Nations Integrated Therapy | Hope, Healing, & Meaning</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
         body {
-            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-family: 'Georgia', serif;
             line-height: 1.6;
             color: #333;
-            margin: 0;
-            background-color: #f9fbfc;
+            background-color: #f9f9f9;
         }
-        header {
+        
+        /* Navigation */
+        nav {
             background-color: white;
-            padding: 40px 20px;
-            text-align: center;
-            border-bottom: 3px solid #3498db;
+            padding: 15px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
-        .container {
-            max-width: 900px;
-            margin: 20px auto;
-            padding: 20px;
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-        }
-        .pillars {
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
             display: flex;
-            gap: 20px;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #2c5f2d;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: #555;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #2c5f2d;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), 
+                        url('https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=1200') center/cover;
+            color: white;
+            text-align: center;
+            padding: 120px 20px;
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        .hero p {
+            font-size: 24px;
+            font-style: italic;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+        
+        .hero-subtitle {
+            font-size: 18px;
+            margin-top: 10px;
+        }
+        
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+        
+        .section {
+            margin-bottom: 80px;
+        }
+        
+        .section h2 {
+            color: #2c5f2d;
+            font-size: 36px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .section p {
+            font-size: 18px;
+            line-height: 1.8;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        /* About Section */
+        .about-content {
+            display: flex;
+            gap: 40px;
+            align-items: center;
             margin-top: 30px;
         }
-        .column {
+        
+        .about-text {
             flex: 1;
-            padding: 15px;
-            background: #f0f7fd;
-            border-radius: 5px;
+        }
+        
+        .about-text h3 {
+            color: #2c5f2d;
+            margin-bottom: 10px;
+        }
+        
+        .about-image {
+            flex: 1;
             text-align: center;
         }
-        h1, h2 { color: #2c3e50; }
-        .tagline { font-style: italic; color: #7f8c8d; }
+        
+        .about-image img {
+            max-width: 300px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+        
+        /* Holistic Services */
+        .holistic-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+        
+        .holistic-item {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        
+        .holistic-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+        
+        /* Three Pillars */
+        .pillars {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
+        
+        .pillar {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        
+        .pillar img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        
+        .pillar h3 {
+            color: #2c5f2d;
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+        
+        .pillar p {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+        
+        .pillar .verse {
+            font-style: italic;
+            color: #666;
+            font-size: 14px;
+            margin-top: 15px;
+        }
+        
+        /* Quote Section */
+        .quote-section {
+            background: #2c5f2d;
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+        
+        .quote-section blockquote {
+            font-size: 24px;
+            font-style: italic;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .quote-section cite {
+            display: block;
+            margin-top: 20px;
+            font-size: 18px;
+            font-style: normal;
+        }
+        
+        /* Footer */
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+        }
+        
+        footer p {
+            margin: 5px 0;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 32px;
+            }
+            
+            .hero p {
+                font-size: 18px;
+            }
+            
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .section h2 {
+                font-size: 28px;
+            }
+        }
     </style>
 </head>
 <body>
-<header>
-    <h1>Nations Integrated Therapy</h1>
-    <p class="tagline">Offering Hope, Healing, & Meaning</p>
-</header>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">🌿 Nations Integrated Therapy</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Dr. Nations</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
 
-<div class="container">
-    <h2>Welcome</h2>
-    <p>Humans are physical, intellectual, emotional, mindful, social, and spiritual beings. Nations Integrated Therapy seeks to provide holistic services.</p>
-
-<div class="pillars">
-    <div class="column">
-        <h3>Hope</h3>
-        <p>A place of repair or safe harbor.</p>
+    <!-- Hero Section -->
+    <div class="hero">
+        <h1>Offering Hope, Healing, & Meaning</h1>
+        <p>Throughout Idaho's Treasure Valley & Alaska Tele-mental health</p>
+        <p class="hero-subtitle">Individual, Family, Marital, and Group Counseling</p>
     </div>
-    <div class="column">
-        <h3>Healing</h3>
-        <p>An atmosphere of trust.</p>
-    </div>
-<div class="column">
-    <h3>Meaning</h3>
-    <p>Finding purpose in every season.pltxt</p>
-</div>
-</div>
-</div>
 
+    <!-- Main Content -->
+    <div class="container">
+        <!-- About Section -->
+        <section class="section" id="about">
+            <h2>About Dr. Nations</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Viann Nations, Ph.D.</h3>
+                    <p>Licensed Psychologist</p>
+                    <p>Alaska #623 LCPC #4114</p>
+                    <p>Court Approved Domestic Battery Evaluator</p>
+                    <br>
+                    <h3>About My Logo</h3>
+                    <p>The Greek symbol Psi is often used to represent psychology. The olive branch is a symbol of friendship, reaching out, and peace. Therefore, as a psychologist, I extend the olive branch of welcome and peace.</p>
+                </div>
+                <div class="about-image">
+                    <div style="width: 150px; height: 150px; margin: 0 auto; background: #2c5f2d; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 72px; color: white;">Ψ</div>
+                    <p style="margin-top: 10px; font-size: 14px; color: #666;">Psi with Olive Branch</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quote Section -->
+    </div>
+    
+    <div class="quote-section">
+        <blockquote>
+            "Western medicine has treated every aspect of man but the spiritual."
+            <cite>– Victor Frankl</cite>
+        </blockquote>
+    </div>
+
+    <div class="container">
+        <!-- Holistic Services -->
+        <section class="section" id="services">
+            <h2>Holistic Services</h2>
+            <p>Humans are physical, intellectual, emotional, mindful, social, and spiritual beings. Nations Integrated Therapy seeks to provide holistic services, and when necessary, to provide referrals to other professionals and helpers in the community.</p>
+            <div class="holistic-grid">
+                <div class="holistic-item">
+                    <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400" alt="Physical">
+                    <h3>Physical</h3>
+                </div>
+                <div class="holistic-item">
+                    <img src="https://images.unsplash.com/photo-1516302752625-fcc3c50ae61f?w=400" alt="Emotional">
+                    <h3>Emotional</h3>
+                </div>
+                <div class="holistic-item">
+                    <img src="https://images.unsplash.com/photo-1499209974431-9dddcece7f88?w=400" alt="Mindful">
+                    <h3>Mindful</h3>
+                </div>
+                <div class="holistic-item">
+                    <img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=400" alt="Spiritual">
+                    <h3>Spiritual</h3>
+                </div>
+            </div>
+        </section>
+
+        <!-- Three Pillars -->
+        <section class="section">
+            <h2>Hope, Healing, and Meaning</h2>
+            <p style="font-style: italic; margin-bottom: 20px;">Together, we can find purpose in Your life!</p>
+            
+            <div class="pillars">
+                <div class="pillar">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500" alt="Hope - Safe Harbor">
+                    <h3>Hope</h3>
+                    <p>The word hope can be translated place of repair or safe harbor. Hope is an essential ingredient for all of life.</p>
+                    <p class="verse">"The Lord will be the hope of His people." – Joel 3:16</p>
+                </div>
+                
+                <div class="pillar">
+                    <img src="https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?w=500" alt="Healing - Trust">
+                    <h3>Healing</h3>
+                    <p>Creating an atmosphere of trust is essential to emotional health and well-being.</p>
+                    <p class="verse">"If thou wilt diligently hearken to the voice of the LORD thy God . . . I am the LORD that healeth thee." – Exodus 15:26</p>
+                </div>
+                
+                <div class="pillar">
+                    <img src="https://images.unsplash.com/photo-1501139083538-0139583c060f?w=500" alt="Meaning - Purpose">
+                    <h3>Meaning</h3>
+                    <p>Every person seeks to have purpose and meaning in his/her life.</p>
+                    <p class="verse">"For everything there is a season, and a time for every purpose under heaven:" – Ecclesiastes 3:3</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Nations Integrated Therapy</p>
+        <p>Licensed in Idaho's Treasure Valley & Alaska</p>
+    </footer>
 </body>
 </html>
